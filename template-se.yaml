@@ -15,12 +15,12 @@
 apiVersion: templates.gatekeeper.sh/v1beta1
 kind: ConstraintTemplate
 metadata:
-  name: k8ssecretsencriptvalidation
+  name: k8ssecretsencryptvalidation
 spec:
   crd:
     spec:
       names:
-        kind: K8sSecretsEncriptValidation
+        kind: K8sSecretsEncryptValidation
       validation:
         # Schema for the `parameters` field
         openAPIV3Schema:
@@ -30,7 +30,7 @@ spec:
   targets:
     - target: admission.k8s.gatekeeper.sh
       rego: |
-        package k8ssecretsencriptvalidation
+        package k8ssecretsencryptvalidation
 
         get_message(parameters, _default) = msg {
           not parameters.message
