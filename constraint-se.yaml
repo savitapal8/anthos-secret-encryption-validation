@@ -15,9 +15,13 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sSecretsEncriptValidation
 metadata:
-  name: secrets-encript-validation
+  name: secrets-encrypt-validation
 spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: 
+          - AdminCluster
+          - UserCluster
   parameters:
-    #internalCIDRs: []
-    secretsEncryption
-# [END anthos_config_management_quickstart_policies_no_ext_services] 
+    message: "You must specify Secrets Encryption"
