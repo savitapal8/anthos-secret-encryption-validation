@@ -13,7 +13,7 @@
 # limitations under the License.
 # [START anthos_config_management_quickstart_policies_no_ext_services] 
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sSecretsEncriptValidation
+kind: K8sSecretsEncryptValidation
 metadata:
   name: secrets-encrypt-validation
 spec:
